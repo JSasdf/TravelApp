@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Travel Planner</title>
+    <link rel="icon" href="data:;base64,=" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><h1 class="logo">Travel</h1></li>
+          <li><a href="">Plan</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="plan" class="section section__planner">
+        <div class="container">
+          <form class="form__content" id="form">
+            <h2 class="form__heading">Trip Planner</h2>
+            <input
+              type="text"
+              class="form__input"
+              name="from"
+              placeholder="Leave From"
+              autocomplete="on"
+              required
+            />
+            <input
+              type="text"
+              class="form__input"
+              name="to"
+              placeholder="Arrive To"
+              autocomplete="on"
+              required
+            />
+            <label class="date__label" for="date">Depart On</label>
+            <input type="date" class="form__input" name="date" required />
+            <input
+              type="submit"
+              class="input__submit"
+              name="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </section>
+
+      <section id="result" class="section section__result invisible">
+        <div class="container results">
+          <div class="result__image">
+            <img src="" id="Pixabay" />
+          </div>
+          <div class="result__content">
+            <h2 class="city__name">Going To: <span id="city"></span></h2>
+            <h2 class="date__name">
+              Departing On: <span id="date">DD/MM/YYYY</span>
+            </h2>
+            <h2 class="weather__name">
+              Expect Weather To Be: <span id="temp">0</span> &#176; F,
+              <span id="summary"></span>.
+            </h2>
+            <a class="button" id="print" href="#">Print</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>By Jerry Sun | Travel App Project</p>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/service-worker.js")
+            .then(registration => {
+              console.log("SW registered: ", registration);
+            });
+        });
+      } else {
+        console.log("SW not working");
+      }
+    </script>
+  </body>
+</html>

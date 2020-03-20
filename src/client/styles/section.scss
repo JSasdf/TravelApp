@@ -1,0 +1,136 @@
+$font-h2: 3rem;
+$color-w: rgba(255, 255, 255, 0.6);
+$color-b: rgb(0, 0, 0);
+$color-p: #4b6f9c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $color-p;
+}
+
+#plan {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  padding-top: 1.5rem;
+  //cannot get background image to load in production. Not sure how to get it to work so commented it out.
+  .container {
+    //background: url("/src/client/views/img/background.png") no-repeat;
+    background-color: $color-w;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 65vh;
+    width: 60vw;
+    margin: auto;
+  }
+
+  .form__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__heading {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    font-size: $font-h2;
+    color: $color-b;
+  }
+  .form__input {
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1.5rem 0;
+  }
+  .date__label {
+    padding: 1.5rem 0rem;
+    font-size: 3rem;
+    color: $color-b;
+  }
+  .input__submit {
+    border-radius: 3rem;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1.5rem 0;
+    opacity: 0.8;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+#result {
+  min-height: 90vh;
+  width: 90%;
+  margin: auto;
+  padding-top: 1.5rem;
+  .container {
+    background-color: $color-w;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 65vh;
+    width: 60vw;
+    margin: auto;
+  }
+
+  .result__image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .result__content {
+    padding-top: 1rem;
+  }
+  .city__name {
+    padding: 0.5rem;
+  }
+  .date__name {
+    padding: 0.5rem;
+  }
+  .weather__name {
+    padding: 0.5rem;
+  }
+  #Pixabay {
+    height: 20rem;
+    width: 20rem;
+    overflow: hidden;
+  }
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.button {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: $color-b 0.1rem solid;
+  border-radius: 2rem;
+  &:hover {
+    box-shadow: 0.5rem 0 1rem rgba(238, 75, 75, 0.5);
+    opacity: 1;
+  }
+}
+
+.invisible {
+  display: none;
+}
